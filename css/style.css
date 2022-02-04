@@ -1,0 +1,201 @@
+body {
+    font-family:arial,sans-serif;
+    background-color:rgb(160, 160, 160);
+}
+.taskbar {
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    height:45px;
+    background-color: rgba(0,0,0,1);
+    color:white;
+    z-index:9998;
+}
+.taskbar h2 {
+    font-size:20px;
+    line-height:45px;
+    text-transform: uppercase;
+    margin-left:10px;
+}
+.taskbar .penutuptulisan {
+    height:45px;
+    width:200px;
+    background-color:black;
+    position:absolute;
+    top:0;
+    left:175px;;
+    animation:penutuptulisan 3s 1s  infinite alternate;
+}
+h1 {
+    font-size:50px;
+    text-align:center;
+    text-transform: uppercase;
+    margin-top:50px;
+}
+.galeri {
+    margin:auto;
+    width:600px;
+    height:200px;
+    background-color:white;
+    border-radius:20px;
+    padding-top:50px;
+    text-align:center;
+    
+}
+.galeri .thumbnail {
+    width:150px;
+    border-radius:50%;
+    border:10px solid black;
+}
+.galeri li{
+    position:relative;
+    display:inline-block;
+    margin-right:10px;
+    border-radius:50%;
+}
+.galeri .namafoto {
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    background-color: rgb(110, 110, 110,.7);
+    display:inline-block;
+    position:absolute;
+    top:0;
+    left:0;
+    text-align:center;
+    line-height:150px;
+    font-size:25px;
+    opacity:0;
+    transition:.5s;
+    border:10px solid black;
+    text-decoration:none;
+    color:black;
+}
+.galeri a:hover .namafoto {
+    opacity:1;
+}
+/* OVERLAY */
+.galeri .overlay {
+    overflow:hidden;
+    width:0;
+    height:0;
+    position:fixed;
+    z-index:9999;
+    top:0;
+    left:0;
+    text-align:center;
+    display:block;
+    padding:100px 0;
+    background-color:rgba(0,0,0,0);
+}
+.overlay:target {
+    width:auto;
+    height:auto;
+    right:0;
+    bottom:0;
+    background-color:rgba(0,0,0,.6);
+}
+.overlay .fotoanime {
+    border-radius:10px;
+    border:aliceblue solid 7px;
+    position:absolute;
+    left:100px;
+}
+.overlay:target .fotoanime {
+    animation:Swipeup 2s;
+}
+.close {
+    background-color:black;
+    width:90px;
+    height:20px;
+    color:white;
+    position:absolute;
+    top:10%;
+    left:160px;
+    padding:2px;
+    border:2px solid #fff;
+    border-radius:5px;
+}
+.overlay:target .close {
+    animation:Swipedown 2s;
+}
+.overlay .next , .overlay .prev {
+    width:90px;
+    height:90px;
+    position:absolute;
+    left:300px;
+    top:45%;
+}
+.overlay .prev {
+    margin-left:-280px;
+}
+.overlay:target .next , .overlay:target .prev {
+    animation:FADEIN 2s;
+}
+.galeri .overlay .pengertian {
+    width:700px;
+    height:500px;
+    position:absolute;
+    text-align:left;
+    top:50px;
+    left:400px;
+    color:#fff;
+}
+.overlay:target .pengertian {
+    animation:Swipeleft 2s;
+}
+.galeri .overlay .pengertian h1 {
+    text-align:left;
+}
+/*KEYFRAMES*/
+@keyframes penutuptulisan {
+    0% {
+        width:0px;
+        left:180px;
+    }
+    100% {
+        width:180px;
+        left:0px;
+    }
+}
+@keyframes GESER {
+    0% {
+        margin-left:-200px;
+    }
+    100% {
+        margin-left:0;
+    }
+}
+@keyframes FADEIN {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+@keyframes Swipeup {
+    0% {
+        margin-top:500px;
+    }
+    100% {
+        margin-top:0;
+    }
+}
+@keyframes Swipedown {
+    0% {
+        margin-top:-300px;
+    }
+    100% {
+        margin-top:0;
+    }
+}
+@keyframes Swipeleft {
+    0% {
+        margin-left:800px;
+    }
+    100% {
+        margin-left:0;
+    }
+}
